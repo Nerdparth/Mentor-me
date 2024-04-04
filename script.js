@@ -35,3 +35,16 @@ const menuToggle = document.querySelector('.menu-toggle');
     
         }
     })
+    
+    // whenever there is a scroll on the body for the next page appearence will change
+    gsap.to("#main",{
+        backgroundColor:"#000",
+        scrollTrigger:{
+            trigger:"#main",
+            scroller:"body",
+            // markers:true,
+            start:"top -25%",
+            end:"top -70%",
+            scrub:2
+        }
+    })
