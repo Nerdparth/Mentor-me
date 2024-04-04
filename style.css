@@ -19,19 +19,48 @@ body, html {
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: #fff;
+    color: hsla(169, 30%, 56%, 1);
+}
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: hsla(169, 30%, 56%, 1);
+ }
+body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+ } 
+ 
 /* Navbar styles */
-.navbar {
+nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333; /* Dark background color */
+    /* background-color: #333; Dark background color */
+    background-color: transparent;
     color: #fff;
     position: fixed; /* Fixed position for the navbar */
     width: 100%;
     z-index: 9999;
 }
 
+/* logo css in navbar */
+#logo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#logo img{
+    height: 100px;
+    width: 95px;
+}
+#logo h1{
+    font-size: 30px;
+}
 .nav-links {
     list-style-type: none;
     display: flex;
@@ -48,10 +77,6 @@ body, html {
     padding: 8px 12px;
     border-radius: 5px; /* Rounded corners for links */
     transition: background-color 0.3s ease;
-}
-
-.nav-links a:hover {
-    background-color: #555; /* Darker background on hover */
 }
 
 /* Menu toggle button styles */
@@ -149,20 +174,20 @@ nav { display: flex;
     left: 0;
     width: 40px; /* Increased size */
     height: 40px; /* Increased size */
-    border:  solid rgba(0, 0, 0, 0.5); /* Hollow border */
+    border:  solid rgba(227, 221, 221, 0.5); /* Hollow border */
     border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
+    /* transform: translate(-50%, -50%); */
+    /* pointer-events: none; */
     z-index: 9999;
     transition: transform 0.3s ease;
-    box-sizing: border-box; /* Include border in width and height */
+    /* box-sizing: border-box; Include border in width and height */
 }
 
 /* Example of changing cursor appearance on hover */
 .cursor:hover {
     background-color: rgba(255, 0, 0, 0.7); /* Change color on hover */
-    transform: scale(1.2); /* Increase cursor size on hover */
-}
+    transform: scale(1.2); /*Increase cursor size on hover*/
+} 
 
 
 
@@ -174,7 +199,6 @@ nav { display: flex;
     appearance: none;
     background-color: transparent;
     border: none;
-    
     font: inherit;
     font-size: larger; /* Inherit font from parent */
     cursor: pointer;
