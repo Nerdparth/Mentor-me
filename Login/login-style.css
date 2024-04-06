@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+/* scroller css */
+*::selection {
+    background-color: #fff;
+    color: hsla(169, 30%, 56%, 1);
+}
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: hsla(169, 30%, 56%, 1);
+ }
+body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+ } 
+/* navbar css */
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: relative;
+    background-color: #000;
+}
+/* logo part css of navbar */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo img{
+    height: 100px;
+    width: 95px;
+}
+.logo h1{
+    font-size: 30px;
+    color: #fff;
+}
+/* navlinks of navbar css */
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 37px;
+   
+}
+.nav-links li{
+    list-style-type: none;
+    margin-right: 38px;
+}
+.nav-links a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+}
+/* Menu toggle button styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    position: relative; /* Ensure button respects z-index */
+    z-index: 10000; /* Higher z-index for menu toggle button */
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff; /* White color for lines */
+    margin: 6px 0; /* Increased margin for better spacing */
+    border-radius: 3px; /* Rounded corners */
+    transition: transform 0.3s ease;
+}
+
+/* Active state styles for the lines */
+.menu-toggle.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+    opacity: 0; /* Hide middle line in active state */
+}
+
+.menu-toggle.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide the nav links initially */
+        position: absolute;
+        top: 60px; /* Adjust top position to avoid overlap with navbar */
+        right: 0;
+        background-color: #333; /* Dark background color */
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 20px; /* Add padding to align links properly */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+        z-index: 9998; /* Lower z-index to keep below menu toggle button */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    .nav-links.active li {
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger menu */
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+/* background video css */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lower z-index for the video background */
+    overflow: hidden;
+}
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* login form css */
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: #000;
+    box-shadow: 0 0 50px  rgb(119, 227, 207);
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+}
+  
+.wrapper:hover {
+    animation: animate 1s linear infinite;
+}
+  
+@keyframes animate {
+    100% {
+      filter: hue-rotate(360deg);
+    }
+}
+  
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in-out;
+}
+  
+.wrapper.active .form-wrapper.sign-in {
+    transform: translateY(-450px);
+}
+  
+.wrapper .form-wrapper.sign-up {
+    position: absolute;
+    top: 450px;
+    left: 0;
+}
+  
+.wrapper.active .form-wrapper.sign-up {
+    transform: translateY(-450px);
+}
+  
+h2 {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+ }
+  
+.input-group {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+  
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+  
+.input-group input {
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+  
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: -5px;
+}
+  
+.remember {
+    margin: -5px 0 15px 5px;
+}
+  
+.remember label {
+    color: #fff;
+    font-size: 14px;
+}
+  
+.remember label input {
+  accent-color: rgb(119, 227, 207);;
+}
+  
+button {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: rgb(119, 227, 207);;
+    box-shadow: 0 0 10px rgb(119, 227, 207);;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+  
+.signUp-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+ }
+  
+.signUp-link p {
+    color: #fff;
+}
+  
+.signUp-link p a {
+    color: rgb(119, 227, 207);;
+    text-decoration: none;
+    font-weight: 500;
+}
+  
+.signUp-link p a:hover {
+    text-decoration: underline;
+  }

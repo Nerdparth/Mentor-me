@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="logo">
+            <img src="Logo.png" alt="">
+            <h1>Mentor Me</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="login-form.html">Login</a></li>
+            <li><a href="/Book-a-session/book_a_session.html">Book a Session</a></li>
+        </ul>
+    </div>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="Untitled design (1).mp4" type="video/mp4">
+            <!-- Add additional source elements for different video formats -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="login-form">
+        <div class="wrapper">
+            <div class="form-wrapper sign-in">
+              <form action="">
+                <h2>Login</h2>
+                <div class="input-group">
+                  <input type="text" required>
+                  <label for="">Username</label>
+                </div>
+                <div class="input-group">
+                  <input type="password" required>
+                  <label for="">Password</label>
+                </div>
+                <div class="remember">
+                  <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="signUp-link">
+                  <p>Don't have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
+                </div>
+              </form>
+            </div>
+        
+            <div class="form-wrapper sign-up">
+              <form action="">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                  <input type="text" required>
+                  <label for="">Username</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" required>
+                  <label for="">Email</label>
+                </div>
+                <div class="input-group">
+                  <input type="password" required>
+                  <label for="">Password</label>
+                </div>
+                <div class="remember">
+                  <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="signUp-link">
+                  <p>Already have an account? <a href="#" class="signInBtn-link">Sign In</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+    </div>
+    <script src="login-form.js"></script>
+
+</body>
+</html>
