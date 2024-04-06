@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+/* navbar css */
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: relative;
+    background-color: #000;
+}
+/* logo part css of navbar */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo img{
+    height: 100px;
+    width: 95px;
+}
+.logo h1{
+    font-size: 30px;
+    color: #fff;
+}
+/* navlinks of navbar css */
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 37px;
+   
+}
+.nav-links li{
+    list-style-type: none;
+    margin-right: 38px;
+}
+.nav-links a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+}
+/* Menu toggle button styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    position: relative; /* Ensure button respects z-index */
+    z-index: 10000; /* Higher z-index for menu toggle button */
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff; /* White color for lines */
+    margin: 6px 0; /* Increased margin for better spacing */
+    border-radius: 3px; /* Rounded corners */
+    transition: transform 0.3s ease;
+}
+
+/* Active state styles for the lines */
+.menu-toggle.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+    opacity: 0; /* Hide middle line in active state */
+}
+
+.menu-toggle.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide the nav links initially */
+        position: absolute;
+        top: 60px; /* Adjust top position to avoid overlap with navbar */
+        right: 0;
+        background-color: #333; /* Dark background color */
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 20px; /* Add padding to align links properly */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+        z-index: 9998; /* Lower z-index to keep below menu toggle button */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    .nav-links.active li {
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger menu */
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+/* background video css */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lower z-index for the video background */
+    overflow: hidden;
+}
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+.main-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+.container{
+    height: 530px;
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.content{
+    height: 100%;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+   
+
+}
+.logo-content{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid rgb(211, 202, 202) ;
+    border-right:1px solid  rgb(211, 202, 202);
+    /* margin-top: -5px; */
+    padding-bottom: 10px;
+
+}
+.logo-content img{
+    height: 150px;
+    width: 140px;
+}
+.logo-content h1{
+    /* margin-top: -20px; */
+    font-size: 45px;
+}
+.session-info{
+    padding-top: 20px;
+    height: 100%;
+    margin-left: 25px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    border-right: 1px solid  rgb(211, 202, 202);
+}
+.session-info img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.session-info p{
+    font-size: 20px;
+    color: #8f8a8a;
+}
+.session-info h1{
+    font-size: 25px;
+}
+.session-info .icon {
+    display: inline-block;
+}
+.session-info .icon{
+    height: 20px;
+    width: 20px;
+}
+.session-info  p{
+    font-size: 16px;
+}
+.icon1{
+    display: flex;
+    gap: 5px;
+}
+.icon2{
+    display: flex;
+    gap: 5px;
+}
+.calender-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.wrapper{
+    width: 400px;
+    margin-right: 20px;
+    margin-left: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+header .icons{
+    display: flex;
+}
+header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+}
+.icons span:last-child{
+    margin-right: -10px;
+}
+header .icons span:hover{
+    background: #f2f2f2;
+}
+header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: hsla(169, 30%, 56%, 1);
+}
+.calendar{
+    padding: 20px;
+}
+.calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+.calendar .days{
+    margin-bottom: 20px;
+}
+.calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+}
+.calendar .weeks li{
+    font-weight: 500;
+    cursor: default;
+}
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+}
+.days li.inactive{
+    color: #aaa;
+}
+.days li.active{
+    color: #fff;
+}
+.days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.days li.active::before{
+    background: hsla(169, 30%, 56%, 1);
+}
+.days li:not(.active):hover::before{
+    background: #f2f2f2;
+}
+button{
+    font-size: 20px;
+    border-radius: 25% 10%;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    background-color: hsla(169, 30%, 56%, 1);
+}
+button:hover{
+    background-color:#333;
+}
+
+@media screen and (max-width: 768px) {
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        height: 800px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: auto;
+
+    }
+    .content{
+        display: flex;
+        margin: 0;
+        gap: 0;
+        padding: 0;
+    }
+    .logo-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        border-bottom: 1px solid #878787;
+        border-right: none;
+        margin: 0;
+    }
+    .logo-content img{
+        height: 100px;
+        width: 70px;
+    }
+    .logo-content h1{
+        font-size: 30px;
+    }
+    .session-info{
+        margin-left: -10px;
+        border: none;
+    }
+    .session-instructor{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 80px;
+        padding-bottom: 10px;
+    }
+    .session-instructor-info{
+        text-align: center;
+    }
+    button{
+        font-size: 15px;
+        padding: 6px;
+    }
+    .wrapper{
+        margin:10px;
+    }
+    .calender-main{
+        gap: 10px;
+        padding-bottom: 5px;
+        padding-top: -5px;
+    }
+}
+
+
